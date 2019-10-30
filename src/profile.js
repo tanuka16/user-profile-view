@@ -3,7 +3,8 @@ import {Tabs, Tab} from 'react-mdl';
 
 class Profile extends Component{
   state = {
-    activeTab: 0
+    value:"username"
+
   };
   render(){
     return(
@@ -11,7 +12,7 @@ class Profile extends Component{
         <div>
           <img src={process.env.PUBLIC_URL + 'http://hdqwalls.com/wallpapers/wonder-woman-gal-gadot-fanart-i9.jpg'} alt='avatar'
               className='avatar-img' style={{width:'400px'}}/>
-              <h1>Nina</h1>
+              <h1>{this.state.value}Nina</h1>
         </div>
         <div>
         </div>
