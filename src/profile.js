@@ -3,16 +3,61 @@ import {Tabs, Tab} from 'react-mdl';
 
 class Profile extends Component{
   state = {
-    value:"username"
+    value:"username",
+    isInEdit: false                       //default value false
 
   };
+  changeEdit=() => {
+    this.setState({
+      isInEdit : !this.state.isInEdit
+    })
+    // console.log("change");
+  }
+
+  updateComponentValue = () => {
+    // close the edit view
+    this.setState{
+      isInEdit: false
+    }
+  }
+
+
+
+  renderEditView = () =>{
+    return(
+      <div>
+        <input
+          type="text"
+          defaultValue={this.state.value}
+        />
+        <button onClick={this.changeEdit}>X</button>
+        //update if the save button is clicked
+        <button onClick={this.updateComponentValue}>Save</button>
+      </div>
+    )
+  }
+
+  renderDefaultView = () =>{
+    return(
+      <div onDoubleClick={this.changeEdit}>
+        <h1>{this.state.value}</h1>
+      </div>
+    )
+  }
+
+
   render(){
     return(
       <div>
         <div>
           <img src={process.env.PUBLIC_URL + 'http://hdqwalls.com/wallpapers/wonder-woman-gal-gadot-fanart-i9.jpg'} alt='avatar'
               className='avatar-img' style={{width:'400px'}}/>
-              <h1>{this.state.value}Nina</h1>
+
+              {/* change the username with double click */}
+              { this.state.isInEdit ?
+                this.renderEditView() : this.renderDefaultView()
+              }
+
         </div>
         <div>
         </div>
