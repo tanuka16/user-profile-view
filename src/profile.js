@@ -15,10 +15,12 @@ class Profile extends Component{
   }
 
   updateComponentValue = () => {
-    // close the edit view
-    this.setState{
-      isInEdit: false
-    }
+    this.setState({
+      // close the edit view
+      isInEdit: false,
+      //set value here
+      value: this.refs.theTextInput.value
+    })
   }
 
 
@@ -29,9 +31,10 @@ class Profile extends Component{
         <input
           type="text"
           defaultValue={this.state.value}
+          ref="theTextInput"
         />
         <button onClick={this.changeEdit}>X</button>
-        //update if the save button is clicked
+        {/*update if the save button is clicked*/}
         <button onClick={this.updateComponentValue}>Save</button>
       </div>
     )
@@ -57,8 +60,8 @@ class Profile extends Component{
               { this.state.isInEdit ?
                 this.renderEditView() : this.renderDefaultView()
               }
-
         </div>
+        
         <div>
         </div>
       </div>
