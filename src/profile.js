@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Tabs, Tab} from 'react-mdl';
-import ActiveTab from './components/activeTabs';
+import ActiveTabs from './components/activeTabs';
 
 class Profile extends Component{
   state = {
@@ -61,9 +61,10 @@ class Profile extends Component{
               { this.state.isInEdit ?
                 this.renderEditView() : this.renderDefaultView()
               }
-        </div>
 
+        </div>
         <div>
+          <ActiveTabs/>
         </div>
       </div>
     )
