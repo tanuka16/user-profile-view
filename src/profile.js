@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import {Tabs, Tab} from 'react-mdl';
-import ActiveTabs from './components/activeTabs';
+import ActiveTabs from './components/activeTab';
 
 class Profile extends Component{
   state = {
     value:"username",
     isInEdit: false                       //default value false
 
-  };
+  }
   changeEdit=() => {
     this.setState({
       isInEdit : !this.state.isInEdit
@@ -61,7 +61,6 @@ class Profile extends Component{
               { this.state.isInEdit ?
                 this.renderEditView() : this.renderDefaultView()
               }
-
         </div>
         <div>
           <ActiveTabs/>
