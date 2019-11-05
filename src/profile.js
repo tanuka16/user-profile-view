@@ -70,16 +70,3 @@ class Profile extends Component{
   }
 }
 export default Profile;
-
-
-
-
-
-
-
-
-// <Tabs>
-// <Tab>Stats</Tab>
-// <Tab>Journey</Tab>
-//
-// </Tabs>

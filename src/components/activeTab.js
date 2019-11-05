@@ -10,8 +10,7 @@ class ActiveTabs extends Component{
     if(this.state.displayTab === 0){
       return(
         <div>
-        <hr/>
-        <h3>hi</h3>
+          <h3>hi</h3>
         </div>
       )
     }else if (this.state.displayTab === 1) {
@@ -38,7 +37,9 @@ class ActiveTabs extends Component{
           <Tab>3</Tab>
         </Tabs>
         <section>
+        <div>
           {this.toggleTabs()}
+        </div>
         </section>
         </div>
       </div>
